@@ -18,18 +18,17 @@ localparam  CLK_PERIOD              = SECOND_IN_NANOSECOND/CAC_CLK_FREQUENCY;
 // ---
 
 // CLOCK GENERATION
-reg     clk = LOW;
+wire        clk;
 // ---
-initial 
-begin
-    clk         = LOW;
-    #(CLK_PERIOD/2);
-    forever 
-    begin
-        #(CLK_PERIOD/2);
-        clk     = ~clk;
-    end
-end
+clock_generation_sim #(
+    .CLK_1_FREQUENCY(CAC_CLK_FREQUENCY),
+    .CLK_1_INITIALIZING_DELAY(0),
+    .CLK_1_PHASE(0)
+) 
+CLOCK_GENERATION
+(
+    .clk_out_1(clk)
+);
 // ---
 
 // RESET GENERATION 

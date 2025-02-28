@@ -8,26 +8,25 @@ module uart_tb
 
 // LOCAL PARAMETER 
 // ---
-localparam  HIGH    = 1'b1;
-localparam  LOW     = 1'b0;
-localparam  DRST    = 32'b0;
-localparam  NANOSEC = 1_000_000_000;
+localparam  HIGH        = 1'b1;
+localparam  LOW         = 1'b0;
+localparam  DRST        = 32'b0;
+localparam  NANOSEC     = 1_000_000_000;
+localparam  CLK_PERIOD  = NANOSEC/CAC_CLK_FREQUENCY;
 // ---
 
-// CLOCK GENERATION 
-reg clk;
+// CLOCK GENERATION
+wire        clk;
 // ---
-initial 
-begin
-    clk = LOW;
-    //OFFSET
-    #50;
-    forever 
-    begin
-        #50;
-        clk = !clk;    
-    end    
-end
+clock_generation_sim #(
+    .CLK_1_FREQUENCY(CAC_CLK_FREQUENCY),
+    .CLK_1_INITIALIZING_DELAY(0),
+    .CLK_1_PHASE(0)
+) 
+CLOCK_GENERATION
+(
+    .clk_out_1(clk)
+);
 // ---
 
 
@@ -52,7 +51,7 @@ initial
 begin
     data_in     = DRST;
     in_write    = LOW;
-    #500;
+    #(CLK_PERIOD * 1000);
     @(posedge clk);
     data_in     = 5;
     in_write    = HIGH;
@@ -62,15 +61,18 @@ begin
     @(posedge clk);
     data_in     = DRST;
     in_write    = LOW;
+    // VISUAL TEST MORE EFFECIENT
 end
 // ---
 
 // RX
 reg rx;
 reg out_read;
+integer condition;
 // ---
 initial
 begin
+    condition = DRST;
     out_read = LOW;
     rx = HIGH;                  // IDLE
     #(NANOSEC/CAC_UART_BAUDRATE);
@@ -120,8 +122,25 @@ begin
     @(posedge clk);
     out_read = HIGH;
     @(posedge clk);
+    if (data_out == 3)
+    begin
+        condition = condition + 1;
+    end
     @(posedge clk);
+    if (data_out == 6)
+    begin
+        condition = condition + 1;
+    end
     out_read = LOW;
+    if (condition == 2)
+    begin
+        $display("TEST PASSED SUCCESFULLY.");
+    end
+    else
+    begin
+        $display("TEST DID NOT PASS SUCCESFULLY.");
+    end
+    $finish;
 end
 // ---
 

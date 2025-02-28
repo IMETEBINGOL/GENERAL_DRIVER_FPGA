@@ -44,8 +44,8 @@ localparam  DRST                = 32'd0;
 // ---
 localparam  IDLE                = 0;
 localparam  CMDREAD             = 1;
-localparam  CMDDECODE           = 2;
-localparam  CMDWAIT             = 3;
+localparam  CMDWAIT             = 2;
+localparam  CMDDECODE           = 3;
 localparam  CMDEXEC             = 4;
 localparam  NUMSTATE            = 5;
 // ---

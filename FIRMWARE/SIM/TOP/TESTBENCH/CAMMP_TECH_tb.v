@@ -23,16 +23,17 @@ reg     cac_uart_rx     = HIGH;
 wire    cac_uart_tx;
 
 // CLOCK GENERATION
-// ---  
-initial 
-begin
-    #(10*CLK_PERIOD);
-    forever 
-    begin
-        #(CLK_PERIOD/2);
-        clk = !clk;
-    end    
-end
+wire        clk;
+// ---
+clock_generation_sim #(
+    .CLK_1_FREQUENCY(MASTER_CLOCK_FREQUENCY),
+    .CLK_1_INITIALIZING_DELAY(0),
+    .CLK_1_PHASE(0)
+) 
+CLOCK_GENERATION
+(
+    .clk_out_1(clk)
+);
 // ---
 
 
@@ -157,6 +158,7 @@ begin
     #(SECOND_IN_NANOSECOND/CAC_UART_BAUDRATE);
     cac_uart_rx = HIGH;     // STOP
     #(SECOND_IN_NANOSECOND/CAC_UART_BAUDRATE);
+    // VISUAL TEST IS MORE EFFECIENT
 end
 // ---
 

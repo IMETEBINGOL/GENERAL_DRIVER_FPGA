@@ -18,18 +18,17 @@ localparam  CLK_PERIOD              = SECOND_IN_NANOSECOND/MASTER_CLOCK_FREQUENC
 // ---
 
 // CLOCK GENERATION
-reg     clk = LOW;
+wire        clk;
 // ---
-initial 
-begin
-    clk         = LOW;
-    #(CLK_PERIOD/2);
-    forever 
-    begin
-        #(CLK_PERIOD/2);
-        clk     = ~clk;
-    end
-end
+clock_generation_sim #(
+    .CLK_1_FREQUENCY(MASTER_CLOCK_FREQUENCY),
+    .CLK_1_INITIALIZING_DELAY(0),
+    .CLK_1_PHASE(0)
+) 
+CLOCK_GENERATION
+(
+    .clk_out_1(clk)
+);
 // ---
 
 // RESET GENERATION 
@@ -63,6 +62,26 @@ UUT
 );
 // ---
 
+
+integer     clk_1_time_point_0;
+integer     clk_1_time_point_1;
+initial
+begin
+    #(1000*CLK_PERIOD);
+    @(posedge clk);
+    clk_1_time_point_0 = $time;
+    @(posedge clk);
+    clk_1_time_point_1 = $time;
+    if (clk_1_time_point_1-clk_1_time_point_0 == CLK_PERIOD)
+    begin
+        $display("CLOCK GENERATION IS COMPLETED SUCCESFULLY.");
+    end
+    else
+    begin
+        $display("CLOCK GENERATION IS NOT COMPLETED SUCCESFULLY.");
+    end
+    $finish;
+end
 
 
 

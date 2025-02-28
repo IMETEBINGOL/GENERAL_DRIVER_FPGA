@@ -13,6 +13,7 @@ localparam  HIGH                    = 1'b1;
 localparam  LOW                     = 1'b0;
 localparam  DRST                    = 32'b0;
 localparam  NANOSEC                 = 1_000_000_000;
+localparam  CLK_PERIOD              = NANOSEC/CAC_CLK_FREQUENCY;
 localparam  SETTINGS_ADDR_WIDTH     = 8;
 localparam  SETTINGS_DATA_WIDTH     = 16;
 // ---
@@ -25,20 +26,18 @@ reg                                 uart_in_empty       = HIGH;
 reg [SETTINGS_DATA_WIDTH-1:0]       settings_data_in    = DRST + 16'hC5C5;
 
 
-// CLOCK GENERATION 
-reg clk;
+// CLOCK GENERATION
+wire        clk;
 // ---
-initial 
-begin
-    clk = LOW;
-    //OFFSET
-    #50;
-    forever 
-    begin
-        #50;
-        clk = !clk;    
-    end    
-end
+clock_generation_sim #(
+    .CLK_1_FREQUENCY(CAC_CLK_FREQUENCY),
+    .CLK_1_INITIALIZING_DELAY(0),
+    .CLK_1_PHASE(0)
+) 
+CLOCK_GENERATION
+(
+    .clk_out_1(clk)
+);
 // ---
 
 
@@ -57,8 +56,12 @@ end
 
 // UART_MANAGEMENT
 // ---
+integer lsb;
+integer msb;
 initial
 begin
+    lsb     = DRST;
+    msb     = DRST;
     #500;
     uart_out_empty  = HIGH;
     #10;
@@ -69,12 +72,30 @@ begin
     @(posedge uart_out_read);
     uart_data_out   = `WRITEREG_OPCODE;
     @(posedge uart_out_read);
+    uart_data_out   = 8'h1F;
+    @(posedge uart_out_read);
+    uart_data_out   = 8'h03;
+    @(posedge uart_out_read);
     uart_data_out   = 8'h0F;
     @(posedge uart_out_read);
     uart_data_out   = `READREG_OPCODE;
     @(posedge uart_out_read);
-    uart_data_out   = 8'hA0;
+    uart_data_out   = 8'h1F;
     uart_out_empty  = HIGH;
+    @(posedge uart_in_write);
+    @(posedge clk);
+    lsb             = uart_data_in;
+    @(posedge clk);
+    msb             = uart_data_in;
+    if (lsb == 3 && msb == 15)
+    begin
+        $display("TEST PASSED SUCCESFULLY.");
+    end
+    else
+    begin
+        $display("TEST DID NOT PASS SUCCESFULLY");
+    end
+    $finish;
 end
 // ---
 
