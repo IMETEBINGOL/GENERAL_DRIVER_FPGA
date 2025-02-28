@@ -1,0 +1,9 @@
+puts "THE SIMULATION OF CLOCK MANAGEMENT IS STARTING..."
+set HDL_DIRECTORY ../../HDL
+set PARAMETER_DIRECTORY ../../HDL/PARAMETER
+set TESTBENCH_DIRECTORY TESTBENCH
+source -notrace file.tcl
+source -notrace sim.tcl
+
+
+

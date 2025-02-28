@@ -1,0 +1,36 @@
+`READREG_OPCODE:
+begin
+    case (command_state)
+        COMMAND_INITIAL_STATE:
+        begin
+            read_buffer_goto(UART_READREG_PROCESS_0);
+        end 
+        UART_READREG_PROCESS_0:
+        begin
+            goto(UART_READREG_PROCESS_1); 
+        end
+        UART_READREG_PROCESS_1:
+        begin
+            settings_addr   <= uart_data_out;
+            goto(UART_READREG_PROCESS_2); 
+        end
+        UART_READREG_PROCESS_2:
+        begin
+            write_buffer(settings_data_out[BUFFER_WIDTH-1:0]);
+            goto(UART_READREG_PROCESS_3);
+        end
+        UART_READREG_PROCESS_3:
+        begin
+            write_buffer(settings_data_out[2*BUFFER_WIDTH-1:BUFFER_WIDTH]);
+            goto(UART_READREG_PROCESS_4);
+        end
+        UART_READREG_PROCESS_4:
+        begin
+            state_reset();
+        end
+        default:
+        begin
+            goto(COMMAND_INITIAL_STATE);
+        end 
+    endcase
+end

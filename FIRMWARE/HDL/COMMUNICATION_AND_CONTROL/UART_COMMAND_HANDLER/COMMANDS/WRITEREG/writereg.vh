@@ -1,0 +1,49 @@
+`WRITEREG_OPCODE:
+begin
+    case (command_state)
+        COMMAND_INITIAL_STATE:
+        begin
+            read_buffer_goto(UART_WRITEREG_PROCESS_0);
+        end
+        UART_WRITEREG_PROCESS_0:
+        begin
+            goto(UART_WRITEREG_PROCESS_1);
+        end
+        UART_WRITEREG_PROCESS_1:
+        begin
+            settings_addr                                       <= uart_data_out;
+            read_buffer_goto(UART_WRITEREG_PROCESS_2);
+        end
+        UART_WRITEREG_PROCESS_2:
+        begin
+            goto(UART_WRITEREG_PROCESS_3);
+        end
+        UART_WRITEREG_PROCESS_3:
+        begin
+            settings_data_in[BUFFER_WIDTH-1:0]                  <= uart_data_out;
+            read_buffer_goto(UART_WRITEREG_PROCESS_4);
+        end
+        UART_WRITEREG_PROCESS_4:
+        begin
+            goto(UART_WRITEREG_PROCESS_5);
+        end
+        UART_WRITEREG_PROCESS_5:
+        begin
+            settings_data_in[2*BUFFER_WIDTH-1:BUFFER_WIDTH]     <= uart_data_out;
+            goto(UART_WRITEREG_PROCESS_6);
+        end
+        UART_WRITEREG_PROCESS_6:
+        begin
+            write_settings();
+            goto(UART_WRITEREG_PROCESS_7);
+        end
+        UART_WRITEREG_PROCESS_7:
+        begin
+            state_reset();
+        end
+        default:
+        begin
+            goto(COMMAND_INITIAL_STATE);
+        end 
+    endcase
+end

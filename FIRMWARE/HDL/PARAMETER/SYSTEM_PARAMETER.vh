@@ -1,0 +1,1 @@
+localparam  MASTER_CLOCK_FREQUENCY   = 100_000_000;   

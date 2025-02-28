@@ -1,0 +1,1 @@
+localparam  CAC_CLK_FREQUENCY   = 10_000_000;
