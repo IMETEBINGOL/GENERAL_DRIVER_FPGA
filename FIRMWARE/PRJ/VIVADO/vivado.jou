@@ -3,13 +3,14 @@
 # SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
 # IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
 # SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
-# Start of session at: Wed Feb  5 00:51:02 2025
-# Process ID: 11712
-# Current directory: C:/Project/CAMMP_TECH/FIRMWARE/PRJ/VIVADO
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent16692 C:\Project\CAMMP_TECH\FIRMWARE\PRJ\VIVADO\CAMMP_TECH.xpr
-# Log file: C:/Project/CAMMP_TECH/FIRMWARE/PRJ/VIVADO/vivado.log
-# Journal file: C:/Project/CAMMP_TECH/FIRMWARE/PRJ/VIVADO\vivado.jou
+# Start of session at: Sat Mar  1 05:52:26 2025
+# Process ID: 23720
+# Current directory: C:/Project/GENERAL_DRIVER_FPGA/FIRMWARE/PRJ/VIVADO
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent21884 C:\Project\GENERAL_DRIVER_FPGA\FIRMWARE\PRJ\VIVADO\CAMMP_TECH.xpr
+# Log file: C:/Project/GENERAL_DRIVER_FPGA/FIRMWARE/PRJ/VIVADO/vivado.log
+# Journal file: C:/Project/GENERAL_DRIVER_FPGA/FIRMWARE/PRJ/VIVADO\vivado.jou
 # Running On: Mete, OS: Windows, CPU Frequency: 2592 MHz, CPU Physical cores: 6, Host memory: 17096 MB
 #-----------------------------------------------------------
 start_gui
-open_project C:/Project/CAMMP_TECH/FIRMWARE/PRJ/VIVADO/CAMMP_TECH.xpr
+open_project C:/Project/GENERAL_DRIVER_FPGA/FIRMWARE/PRJ/VIVADO/CAMMP_TECH.xpr
+add_files -fileset constrs_1 -norecurse C:/Project/GENERAL_DRIVER_FPGA/FIRMWARE/CONS/physical.xdc

@@ -165,7 +165,7 @@ end
 
 CAMMMP_TECH UUT
 (
-    .clk                            (clk),
+    .clk_ref                        (clk),
     .rst                            (rst),
     .cac_uart_rx                    (cac_uart_rx),
     .cac_uart_tx                    (cac_uart_tx)

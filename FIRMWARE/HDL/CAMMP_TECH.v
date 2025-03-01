@@ -6,7 +6,7 @@ module CAMMMP_TECH
 (
     // CLOCK AND RESET
     // ---
-    input                                   clk,
+    input                                   clk_ref,
     input                                   rst,
     input                                   cac_uart_rx,
     output                                  cac_uart_tx
@@ -35,8 +35,8 @@ clock_management #(
 ) 
 CLOCK_MANAGEMENT_INSTANTATION
 (
-    .clk_in                                 (clk),
-    .rst                                    (rst),
+    .clk_in                                 (clk_ref),
+    .rst                                    (!rst),
     .clk_f100_p0                            (clk_f100_p0),
     .clk_f10_p0                             (clk_f10_p0),
     .rstb_f100_p0                           (rstb_f100_p0),
