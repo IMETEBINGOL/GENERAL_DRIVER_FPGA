@@ -9,6 +9,6 @@
 ## TODO
 - ~~Make all simulation (testbench) fully automated.~~
 - ~~Prepare the TCL command firmware (HDL) compilation~~ 
-- ~~ FIX ERROR IN UART~~ 
+- ~~FIX ERROR IN UART~~ 
 - ~~WRITE PYTHON CODE FOR UART~~
 - add git ignore
