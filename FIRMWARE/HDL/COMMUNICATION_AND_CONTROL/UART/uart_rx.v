@@ -109,7 +109,7 @@ begin
                         index       <= DRST;
                     end
                     count           <= DRST;
-                    data_out        <= {data_out[BITLEN-2:0], rx};
+                    data_out        <= {rx, data_out[BITLEN-1:1]};
                 end
             end
             STOP:

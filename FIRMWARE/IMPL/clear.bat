@@ -8,3 +8,5 @@ erase /Q /S *.pb
 erase /Q /S *.pb
 erase /Q /S vivado*
 erase /Q /S snapshot*
+erase /Q /S *.txt
+erase /Q /S *.str

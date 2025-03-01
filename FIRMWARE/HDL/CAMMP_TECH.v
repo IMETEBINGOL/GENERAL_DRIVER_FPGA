@@ -9,7 +9,9 @@ module CAMMMP_TECH
     input                                   clk_ref,
     input                                   rst,
     input                                   cac_uart_rx,
-    output                                  cac_uart_tx
+    output                                  cac_uart_tx,
+    output  [15:0]                          debug_leds,
+    input   [2:0]                           debug_switch
     // ---
 
 );
@@ -36,7 +38,7 @@ clock_management #(
 CLOCK_MANAGEMENT_INSTANTATION
 (
     .clk_in                                 (clk_ref),
-    .rst                                    (!rst),
+    .rst                                    (rst),
     .clk_f100_p0                            (clk_f100_p0),
     .clk_f10_p0                             (clk_f10_p0),
     .rstb_f100_p0                           (rstb_f100_p0),
@@ -66,7 +68,10 @@ CAC
     .clk_cac                                (clk_f10_p0),
     .rstb_cac                               (rstb_f10_p0),
     .uart_rx                                (cac_uart_rx),
-    .uart_tx                                (cac_uart_tx)
+    .uart_tx                                (cac_uart_tx),
+    .debug_leds                             (debug_leds),
+    .debug_switch                           (debug_switch)
+
 );
 // ---
 endmodule

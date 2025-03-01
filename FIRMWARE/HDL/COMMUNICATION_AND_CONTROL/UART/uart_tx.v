@@ -93,10 +93,10 @@ begin
             DATA:
             begin
                 count           <= count + 1;
-                tx              <= data_reg[BITLEN-1];
+                tx              <= data_reg[0];
                 if (count == BITCYCLE -1)
                 begin
-                    data_reg    <= {data_reg[BITLEN-2:0], LOW};
+                    data_reg    <= {LOW, data_reg[BITLEN-1:1]};
                     count       <= DRST;
                     index       <= index + 1;
                     if (index == BITLEN - 1)
