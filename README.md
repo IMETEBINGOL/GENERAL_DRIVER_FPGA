@@ -12,3 +12,5 @@
 - ~~FIX ERROR IN UART~~ 
 - ~~WRITE PYTHON CODE FOR UART~~
 - add git ignore
+- write spi and spi command handler
+- drive BMP280

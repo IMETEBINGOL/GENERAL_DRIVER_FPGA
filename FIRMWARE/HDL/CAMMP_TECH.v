@@ -68,10 +68,7 @@ CAC
     .clk_cac                                (clk_f10_p0),
     .rstb_cac                               (rstb_f10_p0),
     .uart_rx                                (cac_uart_rx),
-    .uart_tx                                (cac_uart_tx),
-    .debug_leds                             (debug_leds),
-    .debug_switch                           (debug_switch)
-
+    .uart_tx                                (cac_uart_tx)
 );
 // ---
 endmodule

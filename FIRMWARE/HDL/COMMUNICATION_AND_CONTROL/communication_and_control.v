@@ -17,9 +17,7 @@ module communication_and_control
     input                                       clk_cac,
     input                                       rstb_cac,
     input                                       uart_rx,
-    output                                      uart_tx,
-    output reg  [15:0]                          debug_leds,
-    input       [2:0]                           debug_switch
+    output                                      uart_tx
 );
 
 
@@ -178,51 +176,6 @@ assign  settings_rom_data_12                    =   16'h0000;
 assign  settings_rom_data_13                    =   16'h0000; 
 assign  settings_rom_data_14                    =   16'h0000; 
 assign  settings_rom_data_15                    =   16'h0000; 
-// ---
-
-// DEBUG
-// ---
-always @(*) 
-begin
-    case (debug_switch)
-        3'd0:
-        begin
-            debug_leds = uart_data_out;
-        end
-        3'd1:
-        begin
-            debug_leds = settings_addr;
-        end
-        3'd2:
-        begin
-            debug_leds = settings_data_in;
-        end
-        3'd3:
-        begin
-            debug_leds = settings_data_out;
-        end
-        3'd4:
-        begin
-            debug_leds = settings_rom_data_0;
-        end
-        3'd5:
-        begin
-            debug_leds = uart_data_in;
-        end
-        3'd6:
-        begin
-            debug_leds = uart_data_out;
-        end
-        3'd7:
-        begin
-            debug_leds = uart_data_out;
-        end
-        default:
-        begin
-            debug_leds = uart_data_out;
-        end 
-    endcase    
-end
 // ---
 
 endmodule
