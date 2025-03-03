@@ -1,4 +1,4 @@
-module moduleName 
+module spi 
 #(
     parameter               PACKAGE_SIZE    = 8
 ) 
@@ -67,6 +67,7 @@ begin
             IDLE:
             begin
                 csb                     <= HIGH;
+                sdo                     <= HIGH;
                 if (send)
                 begin
                     state               <= RWADDR;
@@ -155,5 +156,6 @@ end
 // PORT ASSIGMENT 
 // ---
 assign busy                 = (state != IDLE);
+assign data_out             = data_read;
 // ---    
 endmodule

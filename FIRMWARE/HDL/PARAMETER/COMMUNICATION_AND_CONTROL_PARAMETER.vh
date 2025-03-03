@@ -7,3 +7,4 @@ localparam  CAC_UART_BUFFER_WIDTH               = 8;
 localparam  CAC_UART_BUFFER_DEPTH               = 16;
 localparam  CAC_UART_ERRORNUM                   = 3;
 localparam  CAC_BUFFER_WIDTH                    = 8;
+localparam  CAC_BMP280_SPI_PACKAGE_WIDTH        = 8;
