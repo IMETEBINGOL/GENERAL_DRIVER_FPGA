@@ -5,6 +5,7 @@
 
 ## Directories 
 -   FIRMWARE: The HDL sources and development.
+-   SOFTWARE: The python, C and assembly source codes
 
 ## TODO
 - ~~Make all simulation (testbench) fully automated.~~
