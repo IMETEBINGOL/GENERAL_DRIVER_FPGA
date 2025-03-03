@@ -1,0 +1,542 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
+| Date         : Mon Mar  3 20:12:45 2025
+| Host         : Mete running 64-bit major release  (build 9200)
+| Command      : report_timing_summary -file output/post_place_timing_summary.rpt
+| Design       : CAMMMP_TECH
+| Device       : 7a35t-cpg236
+| Speed File   : -1  PRODUCTION 1.23 2018-06-13
+| Design State : Physopt postPlace
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Summary Report
+
+------------------------------------------------------------------------------------------------
+| Timer Settings
+| --------------
+------------------------------------------------------------------------------------------------
+
+  Enable Multi Corner Analysis               :  Yes
+  Enable Pessimism Removal                   :  Yes
+  Pessimism Removal Resolution               :  Nearest Common Node
+  Enable Input Delay Default Clock           :  No
+  Enable Preset / Clear Arcs                 :  No
+  Disable Flight Delays                      :  No
+  Ignore I/O Paths                           :  No
+  Timing Early Launch at Borrowing Latches   :  No
+  Borrow Time for Max Delay Exceptions       :  Yes
+  Merge Timing Exceptions                    :  Yes
+  Inter-SLR Compensation                     :  Conservative
+
+  Corner  Analyze    Analyze    
+  Name    Max Paths  Min Paths  
+  ------  ---------  ---------  
+  Slow    Yes        Yes        
+  Fast    Yes        Yes        
+
+
+------------------------------------------------------------------------------------------------
+| Report Methodology
+| ------------------
+------------------------------------------------------------------------------------------------
+
+No report available as report_methodology has not been run prior. Run report_methodology on the current design for the summary of methodology violations.
+
+
+
+check_timing report
+
+Table of Contents
+-----------------
+1. checking no_clock (0)
+2. checking constant_clock (0)
+3. checking pulse_width_clock (0)
+4. checking unconstrained_internal_endpoints (0)
+5. checking no_input_delay (1)
+6. checking no_output_delay (1)
+7. checking multiple_clock (0)
+8. checking generated_clocks (0)
+9. checking loops (0)
+10. checking partial_input_delay (0)
+11. checking partial_output_delay (0)
+12. checking latch_loops (0)
+
+1. checking no_clock (0)
+------------------------
+ There are 0 register/latch pins with no clock.
+
+
+2. checking constant_clock (0)
+------------------------------
+ There are 0 register/latch pins with constant_clock.
+
+
+3. checking pulse_width_clock (0)
+---------------------------------
+ There are 0 register/latch pins which need pulse_width check
+
+
+4. checking unconstrained_internal_endpoints (0)
+------------------------------------------------
+ There are 0 pins that are not constrained for maximum delay.
+
+ There are 0 pins that are not constrained for maximum delay due to constant clock.
+
+
+5. checking no_input_delay (1)
+------------------------------
+ There is 1 input port with no input delay specified. (HIGH)
+
+ There are 0 input ports with no input delay but user has a false path constraint.
+
+
+6. checking no_output_delay (1)
+-------------------------------
+ There is 1 port with no output delay specified. (HIGH)
+
+ There are 0 ports with no output delay but user has a false path constraint
+
+ There are 0 ports with no output delay but with a timing clock defined on it or propagating through it
+
+
+7. checking multiple_clock (0)
+------------------------------
+ There are 0 register/latch pins with multiple clocks.
+
+
+8. checking generated_clocks (0)
+--------------------------------
+ There are 0 generated clocks that are not connected to a clock source.
+
+
+9. checking loops (0)
+---------------------
+ There are 0 combinational loops in the design.
+
+
+10. checking partial_input_delay (0)
+------------------------------------
+ There are 0 input ports with partial input delay specified.
+
+
+11. checking partial_output_delay (0)
+-------------------------------------
+ There are 0 ports with partial output delay specified.
+
+
+12. checking latch_loops (0)
+----------------------------
+ There are 0 combinational latch loops in the design through latch input
+
+
+
+------------------------------------------------------------------------------------------------
+| Design Timing Summary
+| ---------------------
+------------------------------------------------------------------------------------------------
+
+    WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+    -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+     95.121        0.000                      0                 1933       -0.118       -1.065                     37                 1933        3.000        0.000                       0                   659  
+
+
+Timing constraints are not met.
+
+
+------------------------------------------------------------------------------------------------
+| Clock Summary
+| -------------
+------------------------------------------------------------------------------------------------
+
+Clock            Waveform(ns)         Period(ns)      Frequency(MHz)
+-----            ------------         ----------      --------------
+sys_clk_pin      {0.000 5.000}        10.000          100.000         
+  clk_f10_p0     {0.000 50.000}       100.000         10.000          
+  mmcm_feedback  {0.000 25.000}       50.000          20.000          
+
+
+------------------------------------------------------------------------------------------------
+| Intra Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+Clock                WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+-----                -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+sys_clk_pin                                                                                                                                                        3.000        0.000                       0                     1  
+  clk_f10_p0          95.121        0.000                      0                 1280       -0.118       -1.065                     37                 1280       49.500        0.000                       0                   656  
+  mmcm_feedback                                                                                                                                                   48.751        0.000                       0                     2  
+
+
+------------------------------------------------------------------------------------------------
+| Inter Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Other Path Groups Table
+| -----------------------
+------------------------------------------------------------------------------------------------
+
+Path Group         From Clock         To Clock               WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------         ----------         --------               -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+**async_default**  clk_f10_p0         clk_f10_p0              96.866        0.000                      0                  653        0.432        0.000                      0                  653  
+
+
+------------------------------------------------------------------------------------------------
+| Timing Details
+| --------------
+------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  sys_clk_pin
+  To Clock:  sys_clk_pin
+
+Setup :           NA  Failing Endpoints,  Worst Slack           NA  ,  Total Violation           NA
+Hold  :           NA  Failing Endpoints,  Worst Slack           NA  ,  Total Violation           NA
+PW    :            0  Failing Endpoints,  Worst Slack        3.000ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Pulse Width Checks
+--------------------------------------------------------------------------------------
+Clock Name:         sys_clk_pin
+Waveform(ns):       { 0.000 5.000 }
+Period(ns):         10.000
+Sources:            { clk_ref }
+
+Check Type        Corner  Lib Pin            Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location         Pin
+Min Period        n/a     MMCME2_ADV/CLKIN1  n/a            1.249         10.000      8.751      MMCME2_ADV_X1Y0  CLOCK_MANAGEMENT_INSTANTATION/CLOCK_GENERATION_INSTANTATION/MMCM_INSTANTATION/CLKIN1
+Max Period        n/a     MMCME2_ADV/CLKIN1  n/a            100.000       10.000      90.000     MMCME2_ADV_X1Y0  CLOCK_MANAGEMENT_INSTANTATION/CLOCK_GENERATION_INSTANTATION/MMCM_INSTANTATION/CLKIN1
+Low Pulse Width   Slow    MMCME2_ADV/CLKIN1  n/a            2.000         5.000       3.000      MMCME2_ADV_X1Y0  CLOCK_MANAGEMENT_INSTANTATION/CLOCK_GENERATION_INSTANTATION/MMCM_INSTANTATION/CLKIN1
+High Pulse Width  Slow    MMCME2_ADV/CLKIN1  n/a            2.000         5.000       3.000      MMCME2_ADV_X1Y0  CLOCK_MANAGEMENT_INSTANTATION/CLOCK_GENERATION_INSTANTATION/MMCM_INSTANTATION/CLKIN1
+
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  clk_f10_p0
+  To Clock:  clk_f10_p0
+
+Setup :            0  Failing Endpoints,  Worst Slack       95.121ns,  Total Violation        0.000ns
+Hold  :           37  Failing Endpoints,  Worst Slack       -0.118ns,  Total Violation       -1.065ns
+PW    :            0  Failing Endpoints,  Worst Slack       49.500ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             95.121ns  (required time - arrival time)
+  Source:                 CAC/UART_INSTANTATION/CIRCULAR_BUFFER_UART_RX_INSTANTATION/num_elem_reg[3]/C
+                            (rising edge-triggered cell FDCE clocked by clk_f10_p0  {rise@0.000ns fall@50.000ns period=100.000ns})
+  Destination:            CAC/UART_INSTANTATION/CIRCULAR_BUFFER_UART_RX_INSTANTATION/buffer_reg[8][3]/CE
+                            (rising edge-triggered cell FDCE clocked by clk_f10_p0  {rise@0.000ns fall@50.000ns period=100.000ns})
+  Path Group:             clk_f10_p0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            100.000ns  (clk_f10_p0 rise@100.000ns - clk_f10_p0 rise@0.000ns)
+  Data Path Delay:        4.279ns  (logic 0.858ns (20.051%)  route 3.421ns (79.949%))
+  Logic Levels:           3  (LUT2=1 LUT5=2)
+  Clock Path Skew:        -0.038ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    5.924ns = ( 105.924 - 100.000 ) 
+    Source Clock Delay      (SCD):    6.275ns
+    Clock Pessimism Removal (CPR):    0.313ns
+  Clock Uncertainty:      0.190ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.374ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_f10_p0 rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk_ref (IN)
+                         net (fo=0)                   0.000     0.000    clk_ref
+    W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  clk_ref_IBUF_inst/O
+                         net (fo=1, estimated)        1.233     2.691    CLOCK_MANAGEMENT_INSTANTATION/CLOCK_GENERATION_INSTANTATION/clk_in
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                      0.088     2.779 r  CLOCK_MANAGEMENT_INSTANTATION/CLOCK_GENERATION_INSTANTATION/MMCM_INSTANTATION/CLKOUT1
+                         net (fo=1, estimated)        1.661     4.440    CLOCK_MANAGEMENT_INSTANTATION/CLOCK_GENERATION_INSTANTATION/clk_out_1
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     4.536 r  CLOCK_MANAGEMENT_INSTANTATION/CLOCK_GENERATION_INSTANTATION/clk_out_1_BUFG_inst/O
+                         net (fo=654, estimated)      1.739     6.275    CAC/UART_INSTANTATION/CIRCULAR_BUFFER_UART_RX_INSTANTATION/clk
+    SLICE_X13Y102        FDCE                                         r  CAC/UART_INSTANTATION/CIRCULAR_BUFFER_UART_RX_INSTANTATION/num_elem_reg[3]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X13Y102        FDCE (Prop_fdce_C_Q)         0.456     6.731 r  CAC/UART_INSTANTATION/CIRCULAR_BUFFER_UART_RX_INSTANTATION/num_elem_reg[3]/Q
+                         net (fo=7, estimated)        0.892     7.623    CAC/UART_INSTANTATION/CIRCULAR_BUFFER_UART_RX_INSTANTATION/num_elem[3]
+    SLICE_X13Y102        LUT5 (Prop_lut5_I0_O)        0.124     7.747 f  CAC/UART_INSTANTATION/CIRCULAR_BUFFER_UART_RX_INSTANTATION/buffer_full_INST_0/O
+                         net (fo=11, estimated)       0.496     8.243    CAC/UART_INSTANTATION/out_full
+    SLICE_X14Y100        LUT2 (Prop_lut2_I1_O)        0.124     8.367 r  CAC/UART_INSTANTATION/CIRCULAR_BUFFER_UART_RX_INSTANTATION_i_1/O
+                         net (fo=21, estimated)       1.248     9.615    CAC/UART_INSTANTATION/CIRCULAR_BUFFER_UART_RX_INSTANTATION/wrt
+    SLICE_X15Y106        LUT5 (Prop_lut5_I0_O)        0.154     9.769 r  CAC/UART_INSTANTATION/CIRCULAR_BUFFER_UART_RX_INSTANTATION/buffer[8][7]_i_1/O
+                         net (fo=8, estimated)        0.785    10.554    CAC/UART_INSTANTATION/CIRCULAR_BUFFER_UART_RX_INSTANTATION/buffer[8][7]_i_1_n_0
+    SLICE_X8Y102         FDCE                                         r  CAC/UART_INSTANTATION/CIRCULAR_BUFFER_UART_RX_INSTANTATION/buffer_reg[8][3]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_f10_p0 rise edge)
+                                                    100.000   100.000 r  
+    W5                                                0.000   100.000 r  clk_ref (IN)
+                         net (fo=0)                   0.000   100.000    clk_ref
+    W5                   IBUF (Prop_ibuf_I_O)         1.388   101.388 r  clk_ref_IBUF_inst/O
+                         net (fo=1, estimated)        1.171   102.559    CLOCK_MANAGEMENT_INSTANTATION/CLOCK_GENERATION_INSTANTATION/clk_in
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                      0.083   102.642 r  CLOCK_MANAGEMENT_INSTANTATION/CLOCK_GENERATION_INSTANTATION/MMCM_INSTANTATION/CLKOUT1
+                         net (fo=1, estimated)        1.578   104.220    CLOCK_MANAGEMENT_INSTANTATION/CLOCK_GENERATION_INSTANTATION/clk_out_1
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091   104.311 r  CLOCK_MANAGEMENT_INSTANTATION/CLOCK_GENERATION_INSTANTATION/clk_out_1_BUFG_inst/O
+                         net (fo=654, estimated)      1.613   105.924    CAC/UART_INSTANTATION/CIRCULAR_BUFFER_UART_RX_INSTANTATION/clk
+    SLICE_X8Y102         FDCE                                         r  CAC/UART_INSTANTATION/CIRCULAR_BUFFER_UART_RX_INSTANTATION/buffer_reg[8][3]/C
+                         clock pessimism              0.313   106.237    
+                         clock uncertainty           -0.190   106.047    
+    SLICE_X8Y102         FDCE (Setup_fdce_C_CE)      -0.372   105.675    CAC/UART_INSTANTATION/CIRCULAR_BUFFER_UART_RX_INSTANTATION/buffer_reg[8][3]
+  -------------------------------------------------------------------
+                         required time                        105.675    
+                         arrival time                         -10.554    
+  -------------------------------------------------------------------
+                         slack                                 95.121    
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack (VIOLATED) :        -0.118ns  (arrival time - required time)
+  Source:                 CAC/UART_COMMAND_HANDLER_INSTANTATION/uart_data_in_reg[4]/C
+                            (rising edge-triggered cell FDCE clocked by clk_f10_p0  {rise@0.000ns fall@50.000ns period=100.000ns})
+  Destination:            CAC/UART_INSTANTATION/CIRCULAR_BUFFER_UART_TX_INSTANTATION/buffer_reg[4][4]/D
+                            (rising edge-triggered cell FDCE clocked by clk_f10_p0  {rise@0.000ns fall@50.000ns period=100.000ns})
+  Path Group:             clk_f10_p0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_f10_p0 rise@0.000ns - clk_f10_p0 rise@0.000ns)
+  Data Path Delay:        0.305ns  (logic 0.141ns (46.298%)  route 0.164ns (53.702%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.353ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.727ns
+    Source Clock Delay      (SCD):    2.111ns
+    Clock Pessimism Removal (CPR):    0.263ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_f10_p0 rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk_ref (IN)
+                         net (fo=0)                   0.000     0.000    clk_ref
+    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  clk_ref_IBUF_inst/O
+                         net (fo=1, estimated)        0.520     0.746    CLOCK_MANAGEMENT_INSTANTATION/CLOCK_GENERATION_INSTANTATION/clk_in
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                      0.050     0.796 r  CLOCK_MANAGEMENT_INSTANTATION/CLOCK_GENERATION_INSTANTATION/MMCM_INSTANTATION/CLKOUT1
+                         net (fo=1, estimated)        0.700     1.496    CLOCK_MANAGEMENT_INSTANTATION/CLOCK_GENERATION_INSTANTATION/clk_out_1
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     1.522 r  CLOCK_MANAGEMENT_INSTANTATION/CLOCK_GENERATION_INSTANTATION/clk_out_1_BUFG_inst/O
+                         net (fo=654, estimated)      0.589     2.111    CAC/UART_COMMAND_HANDLER_INSTANTATION/clk
+    SLICE_X5Y99          FDCE                                         r  CAC/UART_COMMAND_HANDLER_INSTANTATION/uart_data_in_reg[4]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X5Y99          FDCE (Prop_fdce_C_Q)         0.141     2.252 r  CAC/UART_COMMAND_HANDLER_INSTANTATION/uart_data_in_reg[4]/Q
+                         net (fo=16, estimated)       0.164     2.416    CAC/UART_INSTANTATION/CIRCULAR_BUFFER_UART_TX_INSTANTATION/data_in[4]
+    SLICE_X5Y101         FDCE                                         r  CAC/UART_INSTANTATION/CIRCULAR_BUFFER_UART_TX_INSTANTATION/buffer_reg[4][4]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_f10_p0 rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk_ref (IN)
+                         net (fo=0)                   0.000     0.000    clk_ref
+    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  clk_ref_IBUF_inst/O
+                         net (fo=1, estimated)        0.547     0.961    CLOCK_MANAGEMENT_INSTANTATION/CLOCK_GENERATION_INSTANTATION/clk_in
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                      0.053     1.014 r  CLOCK_MANAGEMENT_INSTANTATION/CLOCK_GENERATION_INSTANTATION/MMCM_INSTANTATION/CLKOUT1
+                         net (fo=1, estimated)        0.737     1.751    CLOCK_MANAGEMENT_INSTANTATION/CLOCK_GENERATION_INSTANTATION/clk_out_1
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.780 r  CLOCK_MANAGEMENT_INSTANTATION/CLOCK_GENERATION_INSTANTATION/clk_out_1_BUFG_inst/O
+                         net (fo=654, estimated)      0.947     2.727    CAC/UART_INSTANTATION/CIRCULAR_BUFFER_UART_TX_INSTANTATION/clk
+    SLICE_X5Y101         FDCE                                         r  CAC/UART_INSTANTATION/CIRCULAR_BUFFER_UART_TX_INSTANTATION/buffer_reg[4][4]/C
+                         clock pessimism             -0.263     2.464    
+    SLICE_X5Y101         FDCE (Hold_fdce_C_D)         0.070     2.534    CAC/UART_INSTANTATION/CIRCULAR_BUFFER_UART_TX_INSTANTATION/buffer_reg[4][4]
+  -------------------------------------------------------------------
+                         required time                         -2.534    
+                         arrival time                           2.416    
+  -------------------------------------------------------------------
+                         slack                                 -0.118    
+
+
+
+
+
+Pulse Width Checks
+--------------------------------------------------------------------------------------
+Clock Name:         clk_f10_p0
+Waveform(ns):       { 0.000 50.000 }
+Period(ns):         100.000
+Sources:            { CLOCK_MANAGEMENT_INSTANTATION/CLOCK_GENERATION_INSTANTATION/MMCM_INSTANTATION/CLKOUT1 }
+
+Check Type        Corner  Lib Pin             Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location         Pin
+Min Period        n/a     BUFG/I              n/a            2.155         100.000     97.845     BUFGCTRL_X0Y0    CLOCK_MANAGEMENT_INSTANTATION/CLOCK_GENERATION_INSTANTATION/clk_out_1_BUFG_inst/I
+Max Period        n/a     MMCME2_ADV/CLKOUT1  n/a            213.360       100.000     113.360    MMCME2_ADV_X1Y0  CLOCK_MANAGEMENT_INSTANTATION/CLOCK_GENERATION_INSTANTATION/MMCM_INSTANTATION/CLKOUT1
+Low Pulse Width   Slow    FDCE/C              n/a            0.500         50.000      49.500     SLICE_X10Y97     CAC/SYSTEM_SETTINGS/REGMEM_INSTANTATION/ram_memory_reg[0][0]/C
+High Pulse Width  Slow    FDCE/C              n/a            0.500         50.000      49.500     SLICE_X10Y97     CAC/SYSTEM_SETTINGS/REGMEM_INSTANTATION/ram_memory_reg[0][0]/C
+
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  mmcm_feedback
+  To Clock:  mmcm_feedback
+
+Setup :           NA  Failing Endpoints,  Worst Slack           NA  ,  Total Violation           NA
+Hold  :           NA  Failing Endpoints,  Worst Slack           NA  ,  Total Violation           NA
+PW    :            0  Failing Endpoints,  Worst Slack       48.751ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Pulse Width Checks
+--------------------------------------------------------------------------------------
+Clock Name:         mmcm_feedback
+Waveform(ns):       { 0.000 25.000 }
+Period(ns):         50.000
+Sources:            { CLOCK_MANAGEMENT_INSTANTATION/CLOCK_GENERATION_INSTANTATION/MMCM_INSTANTATION/CLKFBOUT }
+
+Check Type  Corner  Lib Pin              Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location         Pin
+Min Period  n/a     MMCME2_ADV/CLKFBOUT  n/a            1.249         50.000      48.751     MMCME2_ADV_X1Y0  CLOCK_MANAGEMENT_INSTANTATION/CLOCK_GENERATION_INSTANTATION/MMCM_INSTANTATION/CLKFBOUT
+Max Period  n/a     MMCME2_ADV/CLKFBIN   n/a            100.000       50.000      50.000     MMCME2_ADV_X1Y0  CLOCK_MANAGEMENT_INSTANTATION/CLOCK_GENERATION_INSTANTATION/MMCM_INSTANTATION/CLKFBIN
+
+
+
+---------------------------------------------------------------------------------------------------
+Path Group:  **async_default**
+From Clock:  clk_f10_p0
+  To Clock:  clk_f10_p0
+
+Setup :            0  Failing Endpoints,  Worst Slack       96.866ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.432ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             96.866ns  (required time - arrival time)
+  Source:                 CLOCK_MANAGEMENT_INSTANTATION/RESET_SYNCHRONIZER_INSTANTATION_1/rstb_out_reg/C
+                            (rising edge-triggered cell FDCE clocked by clk_f10_p0  {rise@0.000ns fall@50.000ns period=100.000ns})
+  Destination:            CAC/UART_INSTANTATION/CIRCULAR_BUFFER_UART_TX_INSTANTATION/buffer_reg[1][0]/CLR
+                            (recovery check against rising-edge clock clk_f10_p0  {rise@0.000ns fall@50.000ns period=100.000ns})
+  Path Group:             **async_default**
+  Path Type:              Recovery (Max at Slow Process Corner)
+  Requirement:            100.000ns  (clk_f10_p0 rise@100.000ns - clk_f10_p0 rise@0.000ns)
+  Data Path Delay:        2.671ns  (logic 0.642ns (24.036%)  route 2.029ns (75.964%))
+  Logic Levels:           1  (LUT2=1)
+  Clock Path Skew:        0.132ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    5.990ns = ( 105.990 - 100.000 ) 
+    Source Clock Delay      (SCD):    6.091ns
+    Clock Pessimism Removal (CPR):    0.233ns
+  Clock Uncertainty:      0.190ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.374ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_f10_p0 rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk_ref (IN)
+                         net (fo=0)                   0.000     0.000    clk_ref
+    W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  clk_ref_IBUF_inst/O
+                         net (fo=1, estimated)        1.233     2.691    CLOCK_MANAGEMENT_INSTANTATION/CLOCK_GENERATION_INSTANTATION/clk_in
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                      0.088     2.779 r  CLOCK_MANAGEMENT_INSTANTATION/CLOCK_GENERATION_INSTANTATION/MMCM_INSTANTATION/CLKOUT1
+                         net (fo=1, estimated)        1.661     4.440    CLOCK_MANAGEMENT_INSTANTATION/CLOCK_GENERATION_INSTANTATION/clk_out_1
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     4.536 r  CLOCK_MANAGEMENT_INSTANTATION/CLOCK_GENERATION_INSTANTATION/clk_out_1_BUFG_inst/O
+                         net (fo=654, estimated)      1.555     6.091    CLOCK_MANAGEMENT_INSTANTATION/RESET_SYNCHRONIZER_INSTANTATION_1/clk
+    SLICE_X14Y95         FDCE                                         r  CLOCK_MANAGEMENT_INSTANTATION/RESET_SYNCHRONIZER_INSTANTATION_1/rstb_out_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X14Y95         FDCE (Prop_fdce_C_Q)         0.518     6.609 r  CLOCK_MANAGEMENT_INSTANTATION/RESET_SYNCHRONIZER_INSTANTATION_1/rstb_out_reg/Q
+                         net (fo=3, estimated)        0.798     7.407    CAC/rstb_cac
+    SLICE_X13Y101        LUT2 (Prop_lut2_I0_O)        0.124     7.531 f  CAC/UART_INSTANTATION_i_1/O
+                         net (fo=347, estimated)      1.231     8.762    CAC/UART_INSTANTATION/CIRCULAR_BUFFER_UART_TX_INSTANTATION/rstb
+    SLICE_X3Y108         FDCE                                         f  CAC/UART_INSTANTATION/CIRCULAR_BUFFER_UART_TX_INSTANTATION/buffer_reg[1][0]/CLR
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_f10_p0 rise edge)
+                                                    100.000   100.000 r  
+    W5                                                0.000   100.000 r  clk_ref (IN)
+                         net (fo=0)                   0.000   100.000    clk_ref
+    W5                   IBUF (Prop_ibuf_I_O)         1.388   101.388 r  clk_ref_IBUF_inst/O
+                         net (fo=1, estimated)        1.171   102.559    CLOCK_MANAGEMENT_INSTANTATION/CLOCK_GENERATION_INSTANTATION/clk_in
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                      0.083   102.642 r  CLOCK_MANAGEMENT_INSTANTATION/CLOCK_GENERATION_INSTANTATION/MMCM_INSTANTATION/CLKOUT1
+                         net (fo=1, estimated)        1.578   104.220    CLOCK_MANAGEMENT_INSTANTATION/CLOCK_GENERATION_INSTANTATION/clk_out_1
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091   104.311 r  CLOCK_MANAGEMENT_INSTANTATION/CLOCK_GENERATION_INSTANTATION/clk_out_1_BUFG_inst/O
+                         net (fo=654, estimated)      1.679   105.990    CAC/UART_INSTANTATION/CIRCULAR_BUFFER_UART_TX_INSTANTATION/clk
+    SLICE_X3Y108         FDCE                                         r  CAC/UART_INSTANTATION/CIRCULAR_BUFFER_UART_TX_INSTANTATION/buffer_reg[1][0]/C
+                         clock pessimism              0.233   106.223    
+                         clock uncertainty           -0.190   106.033    
+    SLICE_X3Y108         FDCE (Recov_fdce_C_CLR)     -0.405   105.628    CAC/UART_INSTANTATION/CIRCULAR_BUFFER_UART_TX_INSTANTATION/buffer_reg[1][0]
+  -------------------------------------------------------------------
+                         required time                        105.628    
+                         arrival time                          -8.762    
+  -------------------------------------------------------------------
+                         slack                                 96.866    
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             0.432ns  (arrival time - required time)
+  Source:                 CLOCK_MANAGEMENT_INSTANTATION/RESET_SYNCHRONIZER_INSTANTATION_1/rstb_out_reg/C
+                            (rising edge-triggered cell FDCE clocked by clk_f10_p0  {rise@0.000ns fall@50.000ns period=100.000ns})
+  Destination:            CAC/UART_COMMAND_HANDLER_INSTANTATION/command_reg[2]/CLR
+                            (removal check against rising-edge clock clk_f10_p0  {rise@0.000ns fall@50.000ns period=100.000ns})
+  Path Group:             **async_default**
+  Path Type:              Removal (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_f10_p0 rise@0.000ns - clk_f10_p0 rise@0.000ns)
+  Data Path Delay:        0.718ns  (logic 0.209ns (29.118%)  route 0.509ns (70.882%))
+  Logic Levels:           1  (LUT1=1)
+  Clock Path Skew:        0.353ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.699ns
+    Source Clock Delay      (SCD):    2.083ns
+    Clock Pessimism Removal (CPR):    0.263ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_f10_p0 rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk_ref (IN)
+                         net (fo=0)                   0.000     0.000    clk_ref
+    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  clk_ref_IBUF_inst/O
+                         net (fo=1, estimated)        0.520     0.746    CLOCK_MANAGEMENT_INSTANTATION/CLOCK_GENERATION_INSTANTATION/clk_in
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                      0.050     0.796 r  CLOCK_MANAGEMENT_INSTANTATION/CLOCK_GENERATION_INSTANTATION/MMCM_INSTANTATION/CLKOUT1
+                         net (fo=1, estimated)        0.700     1.496    CLOCK_MANAGEMENT_INSTANTATION/CLOCK_GENERATION_INSTANTATION/clk_out_1
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     1.522 r  CLOCK_MANAGEMENT_INSTANTATION/CLOCK_GENERATION_INSTANTATION/clk_out_1_BUFG_inst/O
+                         net (fo=654, estimated)      0.561     2.083    CLOCK_MANAGEMENT_INSTANTATION/RESET_SYNCHRONIZER_INSTANTATION_1/clk
+    SLICE_X14Y95         FDCE                                         r  CLOCK_MANAGEMENT_INSTANTATION/RESET_SYNCHRONIZER_INSTANTATION_1/rstb_out_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X14Y95         FDCE (Prop_fdce_C_Q)         0.164     2.247 r  CLOCK_MANAGEMENT_INSTANTATION/RESET_SYNCHRONIZER_INSTANTATION_1/rstb_out_reg/Q
+                         net (fo=3, estimated)        0.272     2.519    CAC/UART_COMMAND_HANDLER_INSTANTATION/rstb
+    SLICE_X13Y98         LUT1 (Prop_lut1_I0_O)        0.045     2.564 f  CAC/UART_COMMAND_HANDLER_INSTANTATION/uart_rst_i_2/O
+                         net (fo=50, estimated)       0.237     2.801    CAC/UART_COMMAND_HANDLER_INSTANTATION/uart_rst_i_2_n_0
+    SLICE_X12Y100        FDCE                                         f  CAC/UART_COMMAND_HANDLER_INSTANTATION/command_reg[2]/CLR
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_f10_p0 rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk_ref (IN)
+                         net (fo=0)                   0.000     0.000    clk_ref
+    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  clk_ref_IBUF_inst/O
+                         net (fo=1, estimated)        0.547     0.961    CLOCK_MANAGEMENT_INSTANTATION/CLOCK_GENERATION_INSTANTATION/clk_in
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                      0.053     1.014 r  CLOCK_MANAGEMENT_INSTANTATION/CLOCK_GENERATION_INSTANTATION/MMCM_INSTANTATION/CLKOUT1
+                         net (fo=1, estimated)        0.737     1.751    CLOCK_MANAGEMENT_INSTANTATION/CLOCK_GENERATION_INSTANTATION/clk_out_1
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.780 r  CLOCK_MANAGEMENT_INSTANTATION/CLOCK_GENERATION_INSTANTATION/clk_out_1_BUFG_inst/O
+                         net (fo=654, estimated)      0.919     2.699    CAC/UART_COMMAND_HANDLER_INSTANTATION/clk
+    SLICE_X12Y100        FDCE                                         r  CAC/UART_COMMAND_HANDLER_INSTANTATION/command_reg[2]/C
+                         clock pessimism             -0.263     2.436    
+    SLICE_X12Y100        FDCE (Remov_fdce_C_CLR)     -0.067     2.369    CAC/UART_COMMAND_HANDLER_INSTANTATION/command_reg[2]
+  -------------------------------------------------------------------
+                         required time                         -2.369    
+                         arrival time                           2.801    
+  -------------------------------------------------------------------
+                         slack                                  0.432    
+
+
+
+
+

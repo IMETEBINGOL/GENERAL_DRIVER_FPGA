@@ -9,11 +9,8 @@ module CAMMMP_TECH
     input                                   clk_ref,
     input                                   rst,
     input                                   cac_uart_rx,
-    output                                  cac_uart_tx,
-    output  [15:0]                          debug_leds,
-    input   [2:0]                           debug_switch
+    output                                  cac_uart_tx
     // ---
-
 );
 
 

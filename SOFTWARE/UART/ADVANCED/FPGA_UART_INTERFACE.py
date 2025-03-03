@@ -111,7 +111,9 @@ class UART:
                    
 class FUI:
     def __init__(self) -> None:
-        self.uart_obj   = UART()
+        self.uart_obj               = UART()
+        self.threading_function_0   = threading.Thread(target = self.uart_obj.byte_sender)
+        self.threading_function_1   = threading.Thread(target = self.uart_obj.byte_receiver)
     def read_memory(self, address) -> None:
         self.uart_obj.write_queue.put(FUI_MEMORY_READ_COMMAND)
         self.uart_obj.write_queue.put(address)
@@ -146,6 +148,8 @@ class FUI:
     def get_uart_error(self) -> int:
         return (self.read_memory(MEMORY_ROM_ADDRESS_0) & 0x0030) >> 4
     def run(self) -> None:
+        self.threading_function_0.start()
+        self.threading_function_1.start()
         while True:
             command     = input("Enter Command:")
             if (command == READ_MEMORY):
@@ -169,27 +173,17 @@ class FUI:
                 print(f"READ BUFFER FULL:{self.get_read_buffer_full()}")
             elif (command == GET_UART_ERROR):
                 print(f"UART ERROR:{self.get_uart_error()}")
+            elif (command == "EXIT"):
+                self.uart_obj.uart_terminate = True
+                self.threading_function_0.join()
+                self.threading_function_1.join()
+                break
             else:
                 print("INVALID COMMAND...")
             
-    
-        
-        
-        
-        
-
-
-
-
-
-
-
-
-
-
-
 
 if __name__ == "__main__":
-    pass
+    FUI_object  = FUI()
+    FUI_object.run()
 
 
