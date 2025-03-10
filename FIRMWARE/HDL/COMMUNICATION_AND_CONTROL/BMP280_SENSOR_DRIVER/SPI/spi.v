@@ -1,6 +1,6 @@
 module spi 
 #(
-    parameter               PACKAGE_SIZE    = 8
+    parameter                       PACKAGE_SIZE    = 8
 ) 
 (
     input                           clk,
@@ -25,7 +25,7 @@ localparam                              DRST        = 32'd0;
 // ---
 
 // STATES 
-// ---""
+// ---
 localparam                              IDLE        = 0;
 localparam                              RWADDR      = 1;
 localparam                              WRITE       = 2;
@@ -158,4 +158,5 @@ end
 assign busy                 = (state != IDLE);
 assign data_out             = data_read;
 // ---    
+// END OF MODULE 
 endmodule
