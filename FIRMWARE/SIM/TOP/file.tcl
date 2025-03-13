@@ -1,3 +1,5 @@
+# glob => command is used to retrieve all files matching a pattern.
+# -nocomplain => Prevents errors if the directory is empty or if no files match the pattern.
 proc collect_verilog_files {dir} {
     set files {}
 
@@ -16,12 +18,8 @@ proc collect_verilog_files {dir} {
     return $files
 }
 
-
-set SOURCE_FILES [collect_verilog_files "$HDL_DIRECTORY"]
-set TESTBENCH_FILES [collect_verilog_files "$TESTBENCH_DIRECTORY"]
-
 set GLOBAL_FILE C:/Xilinx/Vivado/2023.2/data/verilog/src/glbl.v
-set SOURCE_FILES_STR [join ${SOURCE_FILES} " "]
-set TESTBENCH_FILES_STR [join ${TESTBENCH_FILES} " "]
+set SOURCE_FILES_STR [collect_verilog_files "$HDL_DIRECTORY"]
+set TESTBENCH_FILES_STR [collect_verilog_files "$TESTBENCH_DIRECTORY"]
 
 

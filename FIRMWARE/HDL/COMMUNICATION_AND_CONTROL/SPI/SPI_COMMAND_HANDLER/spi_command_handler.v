@@ -10,7 +10,7 @@ module spi_command_handler
     input                               rstb,
     input   [PACKAGE_SIZE-1:0]          cmd,
     input   [PACKAGE_SIZE-1:0]          data_in,
-    input   [PACKAGE_SIZE-1:0]          addr_in,
+    input   [PACKAGE_SIZE-2:0]          addr_in,
     input                               exec,
     output                              busy,
     output  [PACKAGE_SIZE-1:0]          data_out,
@@ -44,9 +44,9 @@ localparam                              NUMSTATE    = 2;
 
 // LOCAL VARIABLE 
 // ---
-reg     [clog2(NUMSTATE)-1:0]           state;
+reg     [$clog2(NUMSTATE)-1:0]           state;
 reg     [PACKAGE_SIZE-1:0]              cmd_spi;
-reg     [4*PACKAGE_SIZE-1:0]            data_spi;
+reg     [PACKAGE_SIZE-1:0]              data_spi;
 reg     [PACKAGE_SIZE-2:0]              addr_spi;
 reg     [7:0]                           cmd_state;
 wire                                    spi_busy;
@@ -55,7 +55,7 @@ wire    [PACKAGE_SIZE-1:0]              spi_data_out;
 reg                                     spi_send;
 reg     [PACKAGE_SIZE-1:0]              spi_data;
 reg     [PACKAGE_SIZE-2:0]              spi_addr;
-reg                                     spi_rw_op
+reg                                     spi_rw_op;
 reg     [PACKAGE_SIZE-1:0]              data_return;
 // ---
 
@@ -88,7 +88,8 @@ begin
                 if (exec)
                 begin
                     cmd_spi         <= cmd;
-                    data_spi        <= data;
+                    data_spi        <= data_in;
+                    addr_spi        <= addr_in;
                     state           <= CMDEXEC;
                     cmd_state       <= COMMAND_STATE_INITIAL;
                 end

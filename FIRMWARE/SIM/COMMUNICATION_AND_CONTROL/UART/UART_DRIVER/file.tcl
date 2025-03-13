@@ -19,5 +19,6 @@ proc collect_verilog_files {dir} {
 }
 
 set GLOBAL_FILE C:/Xilinx/Vivado/2023.2/data/verilog/src/glbl.v
-set SETTINGS_VERILOG_STR [collect_verilog_files "$SETTINGS_DIRECTORIES"]
-set SETTINGS_VERILOG_TESTBENCHS_STR [collect_verilog_files "$TESTBENCH_DIRECTORIES"]
+set UART_VERILOG_STR [collect_verilog_files "$UART_DIRECTORIES"]
+set HELPER_VERILOG_STR [collect_verilog_files "$HELPER_DIRECTORIES"]
+set UART_VERILOG_TESTBENCHS_STR [collect_verilog_files "$TESTBENCH_DIRECTORIES"]

@@ -78,21 +78,21 @@ begin
     #(NANOSEC/CAC_UART_BAUDRATE);
     rx = LOW;                  // START
     #(NANOSEC/CAC_UART_BAUDRATE);
-    rx = LOW;                  // DATA MSB
-    #(NANOSEC/CAC_UART_BAUDRATE);
-    rx = LOW;
-    #(NANOSEC/CAC_UART_BAUDRATE);
-    rx = LOW;
-    #(NANOSEC/CAC_UART_BAUDRATE);
-    rx = LOW;
-    #(NANOSEC/CAC_UART_BAUDRATE);
-    rx = LOW;
-    #(NANOSEC/CAC_UART_BAUDRATE);
-    rx = LOW;
+    rx = HIGH;                 // DATA MSB
     #(NANOSEC/CAC_UART_BAUDRATE);
     rx = HIGH;
     #(NANOSEC/CAC_UART_BAUDRATE);
-    rx = HIGH;                  // DATA LSB
+    rx = LOW;
+    #(NANOSEC/CAC_UART_BAUDRATE);
+    rx = LOW;
+    #(NANOSEC/CAC_UART_BAUDRATE);
+    rx = LOW;
+    #(NANOSEC/CAC_UART_BAUDRATE);
+    rx = LOW;
+    #(NANOSEC/CAC_UART_BAUDRATE);
+    rx = LOW;
+    #(NANOSEC/CAC_UART_BAUDRATE);
+    rx = LOW;                   // DATA LSB
     #(NANOSEC/CAC_UART_BAUDRATE);
     rx = HIGH;                  // STOP
     #(NANOSEC/CAC_UART_BAUDRATE);
@@ -103,17 +103,17 @@ begin
     #(NANOSEC/CAC_UART_BAUDRATE);
     rx = LOW;                  // DATA MSB
     #(NANOSEC/CAC_UART_BAUDRATE);
-    rx = LOW;
-    #(NANOSEC/CAC_UART_BAUDRATE);
-    rx = LOW;
-    #(NANOSEC/CAC_UART_BAUDRATE);
-    rx = LOW;
-    #(NANOSEC/CAC_UART_BAUDRATE);
-    rx = LOW;
-    #(NANOSEC/CAC_UART_BAUDRATE);
     rx = HIGH;
     #(NANOSEC/CAC_UART_BAUDRATE);
     rx = HIGH;
+    #(NANOSEC/CAC_UART_BAUDRATE);
+    rx = LOW;
+    #(NANOSEC/CAC_UART_BAUDRATE);
+    rx = LOW;
+    #(NANOSEC/CAC_UART_BAUDRATE);
+    rx = LOW;
+    #(NANOSEC/CAC_UART_BAUDRATE);
+    rx = LOW;
     #(NANOSEC/CAC_UART_BAUDRATE);
     rx = LOW;                  // DATA LSB
     #(NANOSEC/CAC_UART_BAUDRATE);

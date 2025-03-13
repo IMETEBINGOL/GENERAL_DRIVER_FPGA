@@ -17,7 +17,6 @@ localparam  SECOND_IN_NANOSECOND    = 1_000_000_000;
 localparam  CLK_PERIOD              = SECOND_IN_NANOSECOND/MASTER_CLOCK_FREQUENCY;
 // ---
 
-reg     clk             = LOW;
 reg     rst             = HIGH;
 reg     cac_uart_rx     = HIGH;
 wire    cac_uart_tx;

@@ -19,5 +19,5 @@ proc collect_verilog_files {dir} {
 }
 
 set GLOBAL_FILE C:/Xilinx/Vivado/2023.2/data/verilog/src/glbl.v
-set SETTINGS_VERILOG_STR [collect_verilog_files "$SETTINGS_DIRECTORIES"]
-set SETTINGS_VERILOG_TESTBENCHS_STR [collect_verilog_files "$TESTBENCH_DIRECTORIES"]
+set SPI_VERILOG_STR [collect_verilog_files "$SPI_DIRECTORIES"]
+set SPI_VERILOG_TESTBENCHS_STR [collect_verilog_files "$TESTBENCH_DIRECTORIES"]
