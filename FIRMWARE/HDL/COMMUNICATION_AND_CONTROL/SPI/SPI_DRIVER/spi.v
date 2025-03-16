@@ -73,17 +73,18 @@ begin
                     state               <= RWADDR;
                     addr                <= {rw_op, addr_in};
                     data                <= data_in;
-                    csb                 <= LOW;
                 end
             end 
             RWADDR:
             begin
+                csb                     <= LOW;
                 sdo                     <= addr[PACKAGE_SIZE-1];
                 addr                    <= {addr[PACKAGE_SIZE-2:0], LOW};
                 counter                 <= counter + 1;
                 if (counter == PACKAGE_SIZE-1)
                 begin
                     state               <= rw_op ? READ : WRITE;
+                    counter             <= DRST;
                 end
             end             
             WRITE:
@@ -94,6 +95,7 @@ begin
                 if (counter == PACKAGE_SIZE-1)
                 begin
                     state               <= IDLE;
+                    counter             <= DRST;
                 end
             end
             READ:
@@ -102,6 +104,7 @@ begin
                 if (counter == PACKAGE_SIZE-1)
                 begin
                     state               <= IDLE;
+                    counter             <= DRST;
                 end
             end                    
             default:

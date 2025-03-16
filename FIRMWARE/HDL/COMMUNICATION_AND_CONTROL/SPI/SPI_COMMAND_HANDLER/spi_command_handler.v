@@ -133,6 +133,7 @@ SPI_INSTANTATION
 // PORT ASSIGMENT 
 // ---
 assign busy                         = (state != CMDREAD);
+assign data_out                     = spi_data_out;
 // ---
 // END OF MODULE 
 endmodule

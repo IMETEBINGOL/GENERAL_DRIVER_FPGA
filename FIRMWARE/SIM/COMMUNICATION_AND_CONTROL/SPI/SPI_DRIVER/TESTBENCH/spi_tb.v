@@ -45,17 +45,17 @@ end
 // UUT INSTANTATION
 reg                                         sdi;
 reg                                         rw_op;
-reg [CAC_BMP280_SPI_PACKAGE_WIDTH-2:0]      addr_in;
-reg [CAC_BMP280_SPI_PACKAGE_WIDTH-1:0]      data_in;
+reg [CAC_SPI_PACKAGE_WIDTH-2:0]             addr_in;
+reg [CAC_SPI_PACKAGE_WIDTH-1:0]             data_in;
 reg                                         send;
 wire                                        csb;
 wire                                        sdo;
 wire                                        busy;
 wire                                        data_ready;
-wire [CAC_BMP280_SPI_PACKAGE_WIDTH-1:0]     data_out;
+wire [CAC_SPI_PACKAGE_WIDTH-1:0]            data_out;
 // ---
 spi #(
-    .PACKAGE_SIZE(CAC_BMP280_SPI_PACKAGE_WIDTH)
+    .PACKAGE_SIZE(CAC_SPI_PACKAGE_WIDTH)
 ) 
 UUT
 (
